@@ -1,7 +1,8 @@
 import { buildConfig } from 'payload/config';
 import path from 'path';
-import Posts from './collections/Posts';
 import Users from './collections/Users';
+import Events from './collections/Events';
+import Media from './collections/Media';
 
 export default buildConfig({
   serverURL: 'http://localhost:3000',
@@ -9,9 +10,9 @@ export default buildConfig({
     user: Users.slug,
   },
   collections: [
+    Events,
+    Media,
     Users,
-    // Add Collections here
-    Posts,
   ],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),

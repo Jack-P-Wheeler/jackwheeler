@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Event from '../components/Event.astro';
+
+
+const getPosts = async () => {
+	try {
+		const response = await fetch('http://localhost:3000/api/events');
+		const data = await response.json();
+		return data;
+	} catch (err) {
+
+	}
+}
+
+---
+
+<Layout title="Events">
+	<main class="max-w-inner mx-auto">
+		<h1 class="text-32 font-extrabold mb-10">Events</h1>
+		{
+			getPosts().then((events) => events.docs.map((event:any) => {
+				return <Event title={event.eventName} date={event.eventDate} />
+			}))
+		}
+
+	</main>
+</Layout>
+
+<style lang="css">
+    [astro-icon] {
+        color: black;
+		width: 20px;
+    }
+</style>

@@ -10,8 +10,11 @@ const Users: CollectionConfig = {
     read: () => true,
   },
   fields: [
-    // Email added by default
-    // Add more fields as needed
+    {
+      label: 'Name',
+      name: 'name',
+      type: 'text'
+    }
   ],
 };
 

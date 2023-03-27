@@ -1,0 +1,8 @@
+---
+    const {title, date} = Astro.props;
+---
+<section>
+    <h2 class="text-26">{title}</h2>
+    <p class="text-neutral-500">{(new Date(date).toLocaleDateString())}</p>
+    <a href={`events/${title}`} class="hover:border-b border-black">Learn More</a>
+</section>

@@ -1,2 +1,2 @@
-# jackwheeler
-My portfolio website
+## Getting Started
+
