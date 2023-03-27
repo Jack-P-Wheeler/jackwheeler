@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon'
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Hello World!</h1>
+		<Icon pack="mdi" name="account"/>
+	</main>
+</Layout>
+
+<style lang="css">
+    [astro-icon] {
+        color: black;
+		width: 20px;
+    }
+</style>
