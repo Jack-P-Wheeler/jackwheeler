@@ -16,10 +16,11 @@ const getPosts = async () => {
 ---
 
 <Layout title="Events">
-	<main class="max-w-inner mx-auto">
-		<h1 class="text-32 font-extrabold mb-10">Events</h1>
+	<main class="max-w-inner mx-30 md:px-30 md:mx-auto">
+		<h1 class="text-32 font-extrabold mb-10 font-header">Events</h1>
 		{
 			getPosts().then((events) => events.docs.map((event:any) => {
+				console.log(event);
 				return <Event title={event.eventName} date={event.eventDate} />
 			}))
 		}

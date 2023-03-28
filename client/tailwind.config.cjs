@@ -2,6 +2,10 @@
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+		fontFamily: {
+			'sans': ['Open Sans'],
+			'header': ['Work Sans'],
+		},
 		extend: {
 			fontSize: {
 				'10': ['0.625rem', '1.625'],
