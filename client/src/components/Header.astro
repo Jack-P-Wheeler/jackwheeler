@@ -1,10 +1,11 @@
 ---
-
+    const path = Astro.url.pathname
 ---
 
 <header class="mx-auto max-w-inner mb-20">
     <nav class="flex">
-        <a href="/">Home</a>
-        <a href="/events" class="ml-10">Events</a>
+        <a href="/" class={(path == "/" ? "border-b border-gray-500" : "") + " hover:border-b hover:border-gray-400"}>Home</a>
+        <a href="/events" class={(path == "/events" ? "border-b border-gray-500" : "") + " ml-10 hover:border-b hover:border-gray-400"}>Events</a>
+        <a href="/resources" class={(path == "/resources" ? "border-b border-gray-500" : "") + " ml-10 hover:border-b hover:border-gray-400"}>Resources</a>
     </nav>
 </header>
