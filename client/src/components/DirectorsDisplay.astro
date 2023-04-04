@@ -1,0 +1,31 @@
+---
+const getDirectors = async () => {
+    try {
+        const response = await fetch("http://localhost:3000/api/directors");
+        const data = await response.json();
+        return data;
+    } catch (err) {
+
+    }
+};
+---
+
+<section class="md:mx-auto max-w-inner mx-30 md:px-30 py-50">
+    <h2 class="text-34 font-header font-bold mb-30">Directors</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-30">
+        {
+            getDirectors().then((data) => data.docs.map((director:any) => {
+                return (
+                    <div class="">
+                        <div class="overflow-hidden max-h-[300px]">
+                            <img src={director.directorPhoto.url} class="w-full object-cover"/>
+                        </div>
+                        
+                        <h3 class="text-24">{director.name}</h3>
+                        <h3 class="">{director.title}</h3>
+                    </div>
+                )
+            }))
+        }
+    </div>
+</section>

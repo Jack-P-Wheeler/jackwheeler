@@ -1,10 +1,12 @@
 ---
+import DirectorsDisplay from '../components/DirectorsDisplay.astro';
 import Hero from '../components/Hero.astro';
+import TextPicture from '../components/TextPicture.astro';
 import Layout from '../layouts/Layout.astro';
 
-const getHome = async () => {
+const getAbout = async () => {
 	try {
-		const response = await fetch('http://localhost:3000/api/pages/642886a35035f556cc947376');
+		const response = await fetch('http://localhost:3000/api/pages/6429bf116e68f0ff93c2c9b2');
 		const data = await response.json();
 		return data;
 	} catch (err) {
@@ -14,14 +16,18 @@ const getHome = async () => {
 
 ---
 
-<Layout title="Home">
+<Layout title="About">
 	<main class="md:mx-auto">
 		
 		{
-		getHome().then((data) => data.blocks.map((block:any) => {
+		getAbout().then((data) => data.blocks.map((block:any) => {
 			switch (block.blockType) {
 				case 'Hero':
 					return <Hero heroHeader={block.heroHeadline} heroText={block.heroText} heroBackgroundImage={block.heroBackgroundImage} buttonText={block.buttonText} buttonLink={block.buttonLink}/>
+				case 'DirectorsDisplay':
+					return <DirectorsDisplay/>
+				case 'TextPicture':
+					return <TextPicture headline={block.headline} text={block.text} image={block.image}/>
 				default:
 					break;
 			}

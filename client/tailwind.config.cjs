@@ -30,7 +30,8 @@ module.exports = {
 				'90': ['5.625rem', '1.2']
 			},
 			maxWidth: {
-				'inner': '1350px'
+				'outer': '1410px',
+				'inner': '1150px'
 			},
 			spacing: {
 				'10': '10px',

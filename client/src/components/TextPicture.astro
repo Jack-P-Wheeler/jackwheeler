@@ -1,0 +1,13 @@
+---
+    import RenderRichText from "./RenderRichText";
+    const {headline, text, image} = Astro.props
+---
+
+<section class="max-w-inner mx-30 md:mx-auto md:px-30">
+    <div>
+        <h2>{headline}</h2>
+        <RenderRichText text={text}/>
+    </div>
+    
+    <img src={image.url}/>
+</section>

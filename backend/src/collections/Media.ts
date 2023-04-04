@@ -2,6 +2,9 @@ import { CollectionConfig } from 'payload/types';
 
 const Media: CollectionConfig = {
     slug: 'media',
+    access: {
+        read: () => true
+    },
     admin: {
         useAsTitle: 'imageName'
     },
@@ -9,6 +12,11 @@ const Media: CollectionConfig = {
         {
             label: 'Image Name',
             name: 'imageName',
+            type: 'text',
+        },
+        {
+            label: 'Alt Text',
+            name: 'alt',
             type: 'text',
         }
     ],
@@ -31,10 +39,6 @@ const Media: CollectionConfig = {
             {
                 name: 'tablet',
                 width: 1024,
-                // By specifying `undefined` or leaving a height undefined,
-                // the image will be sized to a certain width,
-                // but it will retain its original aspect ratio
-                // and calculate a height automatically.
                 height: undefined,
                 position: 'centre',
             },

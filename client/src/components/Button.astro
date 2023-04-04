@@ -1,0 +1,7 @@
+---
+    const {buttonText, buttonLink, style} = Astro.props
+---
+
+<a href={buttonLink} class={`inline-block py-10 px-20 font-bold transition-all ${style === "black" ? "text-black border border-black hover:bg-black hover:text-white" : "text-white border border-white hover:bg-white hover:text-black"}`}>
+    {buttonText}
+</a>

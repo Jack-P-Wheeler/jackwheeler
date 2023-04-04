@@ -1,0 +1,19 @@
+---
+import Button from "./Button.astro";
+
+const {heroHeader, heroText, heroBackgroundImage, buttonText, buttonLink} = Astro.props
+
+
+---
+
+<section class="w-full relative">
+    <img class="w-full absolute z-0 object-cover h-full" src={heroBackgroundImage.url}/>
+    <div class="w-full h-full absolute bg-gradient-to-t md:bg-gradient-to-l from-black via-black md:via-black/50"></div>
+    <div class="max-w-inner mx-auto md:py-30 pt-[200px] pb-30 min-h-[300px] flex">
+        <div class="max-w-[400px] md:ml-auto relative z-10 mx-30 my-auto">
+            <h1 class="text-40 font-header font-extrabold text-white mb-20">{heroHeader}</h1>
+            <p class="text-white mb-20">{heroText}</p>
+            {buttonText ? <Button buttonLink={buttonLink} buttonText={buttonText}/> : null}
+        </div>
+    </div>
+</section>

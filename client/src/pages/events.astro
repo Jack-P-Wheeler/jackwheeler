@@ -20,7 +20,6 @@ const getPosts = async () => {
 		<h1 class="text-32 font-extrabold mb-10 font-header">Events</h1>
 		{
 			getPosts().then((events) => events.docs.map((event:any) => {
-				console.log(event);
 				return <Event title={event.eventName} date={event.eventDate} />
 			}))
 		}
